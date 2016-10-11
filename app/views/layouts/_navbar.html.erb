@@ -23,7 +23,7 @@
     <ul class="nav navbar-nav navbar-right">
       <% if current_user %>
         <li>
-          Hello, <%= current_user.uid %>
+          Hello, <%= current_user.username %>
         </li>
         <li>
           <%= link_to "Logout", logout_path, method: :delete %>
