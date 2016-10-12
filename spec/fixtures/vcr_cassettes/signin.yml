@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/user?access_token=3c38cdb9e10e339fc64126b45337bd60e2b829a2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Wed, 12 Oct 2016 22:49:38 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4993'
+      X-Ratelimit-Reset:
+      - '1476314812'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      Etag:
+      - W/"7f0b06939322d4eb7e6bd4ba4f219e45"
+      Last-Modified:
+      - Tue, 11 Oct 2016 16:08:36 GMT
+      X-Oauth-Scopes:
+      - repo, user
+      X-Accepted-Oauth-Scopes:
+      - ''
+      X-Oauth-Client-Id:
+      - 66c747dcb9968646e422
+      X-Github-Media-Type:
+      - github.v3
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Served-By:
+      - cee4c0729c8e9147e7abcb45b9d69689
+      X-Github-Request-Id:
+      - 3F910F63:19A5:8B20C74:57FEBE02
+    body:
+      encoding: ASCII-8BIT
+      string: '{"login":"j-sm-n","id":9372657,"avatar_url":"https://avatars.githubusercontent.com/u/9372657?v=3","gravatar_id":"","url":"https://api.github.com/users/j-sm-n","html_url":"https://github.com/j-sm-n","followers_url":"https://api.github.com/users/j-sm-n/followers","following_url":"https://api.github.com/users/j-sm-n/following{/other_user}","gists_url":"https://api.github.com/users/j-sm-n/gists{/gist_id}","starred_url":"https://api.github.com/users/j-sm-n/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/j-sm-n/subscriptions","organizations_url":"https://api.github.com/users/j-sm-n/orgs","repos_url":"https://api.github.com/users/j-sm-n/repos","events_url":"https://api.github.com/users/j-sm-n/events{/privacy}","received_events_url":"https://api.github.com/users/j-sm-n/received_events","type":"User","site_admin":false,"name":"Jasmin
+        ","company":null,"blog":"http://techvvitch.com","location":"Denver, CO","email":null,"hireable":true,"bio":"student
+        at @turingschool","public_repos":41,"public_gists":8,"followers":5,"following":13,"created_at":"2014-10-23T21:20:18Z","updated_at":"2016-10-11T16:08:36Z","private_gists":9,"total_private_repos":0,"owned_private_repos":0,"disk_usage":20629,"collaborators":0,"plan":{"name":"free","space":976562499,"collaborators":0,"private_repos":0}}'
+    http_version: 
+  recorded_at: Wed, 12 Oct 2016 22:49:38 GMT
+recorded_with: VCR 3.0.3

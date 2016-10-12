@@ -1,0 +1,10 @@
+<div class="container">
+  <% if current_user %>
+    <ul>
+      <li><%= image_tag(@github_user.avatar) %></li>
+      <li>Following: <%= @github_user.following %></li>
+      <li>Followers: <%= @github_user.followers %></li>
+      <li>Bio: <%= @github_user.bio %></li>
+    </ul>
+  <% end %>
+</div>

@@ -6,6 +6,12 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'spec_helper'
 require 'rspec/rails'
 require 'capybara/rspec'
+require 'webmock'
+
+VCR.configure do |config|
+  config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
+  config.hook_into :webmock # or :fakeweb
+end
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -55,4 +61,30 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+end
+
+def stub_omniauth
+  # first, set OmniAuth to run in test mode
+  OmniAuth.config.test_mode = true
+  # then, provide a set of fake oauth data that
+  # omniauth will use when a user tries to authenticate:
+  OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
+    provider: 'github',
+    uid: "9372657",
+    credentials: {
+      expires: false,
+      token: ENV['MY_TOKEN']
+    },
+    info: {
+      nickname: "j-sm-n",
+      image: "https://avatars.githubusercontent.com/u/22796821?v=3"
+    },
+    extra: {
+      raw_info: {
+        following: "1",
+        followers: "0",
+        # starred_url: "",
+      }
+    }
+  })
 end
