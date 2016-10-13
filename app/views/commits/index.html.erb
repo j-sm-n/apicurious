@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="well">
+    <h2>Recent Commit Activity</h2>
+    <ul>
+      <% @user_events.commits.each do |commit| %>
+        <li>
+          <%= link_to commit[:message], commit[:url] %> 
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

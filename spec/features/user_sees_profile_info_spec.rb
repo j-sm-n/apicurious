@@ -14,4 +14,14 @@ describe "After user logs in", :type => :feature do
       expect(page).to have_content("Bio: student at @turingschool")
     end
   end
+
+  it "shows user their recent commits" do
+    VCR.use_cassette("sign_in_and_see_recent_commits") do
+      stub_omniauth
+      visit root_path
+      click_link "Sign in with Github"
+
+      expect(page).to have_link("View Recent Commits")
+    end
+  end
 end

@@ -77,14 +77,6 @@ def stub_omniauth
     },
     info: {
       nickname: "j-sm-n",
-      image: "https://avatars.githubusercontent.com/u/22796821?v=3"
-    },
-    extra: {
-      raw_info: {
-        following: "1",
-        followers: "0",
-        # starred_url: "",
-      }
     }
   })
 end

@@ -1,10 +1,26 @@
 <div class="container">
-  <% if current_user %>
-    <ul>
-      <li><%= image_tag(@github_user.avatar) %></li>
-      <li>Following: <%= @github_user.following %></li>
-      <li>Followers: <%= @github_user.followers %></li>
-      <li>Bio: <%= @github_user.bio %></li>
-    </ul>
-  <% end %>
+  <div class="well text-center">
+    <% if current_user %>
+      <div class="row">
+        <div class="col-md-12">
+          <%= image_tag(@github_user.avatar, class: "img-circle", height: '300', width: '300') %>
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h2><%= @github_user.username %></h2>
+              Bio: <%= @github_user.bio %>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          Following: <%= @github_user.following %>
+          Followers: <%= @github_user.followers %>
+          <div class="row">
+            <div class="col-md-12">
+              <%= link_to "View Recent Commits", commits_path %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
